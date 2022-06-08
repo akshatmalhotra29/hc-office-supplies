@@ -1,0 +1,2 @@
+GET http://localhost:4004/catalog/get_supplier_info()
+Content-Type: 'application/json

@@ -7,14 +7,17 @@
     "private": true,
     "dependencies": {
         "@sap/cds": "^5",
+        "@sap/hdbext": "^7.6.4",
         "express": "^4",
-        "hdb": "^0.18.3"
+        "hdb": "^0.18.3",
+        "sap-hdbext-promisfied": "^2.202205.1"
     },
     "devDependencies": {
         "sqlite3": "^5.0.2"
     },
     "scripts": {
-        "start": "cds run"
+        "start": "cds run",
+        "build": "cds build/all --clean;cp gen/srv/srv/csn.json srv/gen/;cp -r gen/db/src/gen db/src"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",
@@ -44,7 +47,7 @@
     "cds": {
         "requires": {
             "db": {
-                "kind": "sql"
+                "kind": "hana"
             }
         },
         "hana": {
